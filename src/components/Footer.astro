@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import Container from "./Container.astro";
 import { social } from "@/constants/data";
+import SocialButton from "./SocialButton.astro";
 ---
 
 <footer class="bg-[#F6F7F8]">
@@ -13,18 +14,7 @@ import { social } from "@/constants/data";
       <div class="flex flex-col sm:flex-row flex-wrap gap-5">
         {
           social.map((e) => (
-            <a
-              href={e.url}
-              target="_blank"
-              class="flex min-w-[180px] items-center gap-3 px-4 py-3 border border-[#CED3D9] rounded-2xl hover:bg-black  duration-300 group"
-            >
-              <span class="bg-black p-2 rounded-xl">
-                <Icon name={e.icon} size={20} color={"white"} />
-              </span>
-              <span class="font-semibold text-sm group-hover:text-white">
-                {e.name}
-              </span>
-            </a>
+            <SocialButton name={e.name} icon={e.icon} url={e.url} />
           ))
         }
       </div>
