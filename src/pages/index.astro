@@ -1,8 +1,43 @@
 ---
-import AppLayout from '@/layouts/AppLayout.astro'
-import '@/styles/globals.css'
+import Container from "@/components/Container.astro";
+import { social } from "@/constants/data";
+import AppLayout from "@/layouts/AppLayout.astro";
+import SocialButton from "@/components/SocialButton.astro";
+import "@/styles/globals.css";
 ---
 
-<AppLayout title='Carlos Garavito' description='Carlos G. portfolio'>
-	<!-- Hero Section -->
+<AppLayout title="Carlos Garavito" description="Carlos G. portfolio">
+  <!-- Hero Section -->
+  <Container className="flex justify-between py-10 flex-col md:flex-row-reverse gap-12 sm:gap-[72px]">
+    <div class="flex flex-col gap-11">
+      <div class="flex flex-col gap-[18px]">
+        <div class="flex flex-col gap-3">
+          <h1 class="text-[#0A0908] text-[32px]">
+            Hello, I'm Carlos Garavito 👋🏼
+          </h1>
+          <h2 class="text-xl text-[#515459]">Your super-friendly buddy</h2>
+        </div>
+        <p class="text-base text-[#1D1D1C] leading-7 md:max-w-[500px]">
+          I'm a Product Designer with 4+ years of work experience, I specialize
+          in product design, strategy and storytelling.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-5">
+        {
+          social.map((e) => (
+            <SocialButton name={e.name} icon={e.icon} url={e.url} />
+          ))
+        }
+      </div>
+    </div>
+    <div
+      class="rounded-2xl w-full h-[315px] sm:h-[504px] md:w-[222px] md:h-[274px] min-w-[222px]"
+    >
+      <img
+        src="/profile.jpg"
+        alt="profile picture"
+        class="w-full h-full object-cover object-center rounded-2xl"
+      />
+    </div>
+  </Container>
 </AppLayout>
