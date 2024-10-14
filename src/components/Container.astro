@@ -1,3 +1,13 @@
-<section class="">
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<section class={cn("max-w-[887px] mx-auto px-4 sm:px-8", className)}>
   <slot />
 </section>
