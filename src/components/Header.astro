@@ -13,7 +13,7 @@ import { nav } from "@/constants/data";
         <ul class="hidden sm:flex gap-4">
           {nav.map(e => (
             <li  class={cn('font-semibold text-sm', e.featured && 'font-extrabold bg-black text-white rounded-2xl cursor-pointer')}>
-              <a class="p-4" href={e.url}>{e.name}</a>
+              <a class="p-4 block" href={e.url}>{e.name}</a>
             </li>
           ))}
         </ul>
