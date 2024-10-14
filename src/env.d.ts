@@ -2,6 +2,6 @@
 
 interface ISocial {
   name: string;
-  icon: any;
+  icon: string;
   url: string;
 }

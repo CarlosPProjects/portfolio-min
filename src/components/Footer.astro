@@ -1,14 +1,38 @@
 ---
+import { Icon } from "astro-icon/components";
 import Container from "./Container.astro";
+import { social } from "@/constants/data";
 ---
 
 <footer class="bg-[#F6F7F8]">
-  <Container className="py-10 sm:py-12 md:py-16">
+  <Container
+    className="flex flex-col sm:flex-row justify-between sm:items-center py-10 sm:py-12 md:py-16 gap-10 sm:gap-4"
+  >
     <div class="flex flex-col gap-4">
       <h2 class="font-bold text-xl leading-10">Connect with me on:</h2>
-      <div class="flex flex-col gap-5">
-        <a href="#"></a>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-5">
+        {
+          social.map((e) => (
+            <a
+              href={e.url}
+              class="flex min-w-[180px] items-center gap-3 px-4 py-3 border border-[#CED3D9] rounded-2xl hover:bg-black  duration-300 group"
+            >
+              <span class="bg-black p-2 rounded-xl">
+                <Icon name={e.icon} size={20} color={"white"} />
+              </span>
+              <span class="font-semibold text-sm group-hover:text-white">
+                {e.name}
+              </span>
+            </a>
+          ))
+        }
       </div>
     </div>
+    <a
+      href="#header"
+      class="grid p-3 sm:p-6 place-content-center rounded-2xl bg-black"
+    >
+      <Icon name="arrow-up" class="size-6 sm:size-12" />
+    </a>
   </Container>
 </footer>
