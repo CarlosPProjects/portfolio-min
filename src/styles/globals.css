@@ -12,6 +12,8 @@ html{
 body {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
