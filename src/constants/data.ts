@@ -15,3 +15,21 @@ export const social: ISocial[] = [
     url: "https://www.linkedin.com/in/cgaravitodev/",
   },
 ];
+
+export const nav: INav[] = [
+  {
+    name: "Home",
+    url: "/",
+    featured: false,
+  },
+  {
+    name: "About me",
+    url: "#about",
+    featured: false,
+  },
+  {
+    name: "Contact me",
+    url: "#contact",
+    featured: true,
+  },
+];

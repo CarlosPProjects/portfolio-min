@@ -5,3 +5,9 @@ interface ISocial {
   icon: string;
   url: string;
 }
+
+interface INav {
+  name: string;
+  url: string;
+  featured: boolean;
+}
