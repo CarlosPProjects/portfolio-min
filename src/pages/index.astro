@@ -7,12 +7,19 @@ import ProjectCard from "@/components/ProjectCard.astro";
 import SkillCard from "@/components/SkillCard.astro";
 import "@/styles/globals.css";
 import { Icon } from "astro-icon/components";
+
+const cv: ISocial = {
+  name: "Resume",
+  icon: "file-document-svgrepo-com",
+  url: "/assets/CV_2024.pdf",
+};
+const newMap = [...social, cv];
 ---
 
 <AppLayout title="Carlos Garavito" description="Carlos G. portfolio">
   <!-- Hero Section -->
   <Container
-    className="flex justify-between flex-col md:flex-row-reverse gap-12 sm:gap-[72px]"
+    className="flex justify-between flex-col md:flex-row-reverse gap-12 sm:gap-10"
   >
     <div class="flex flex-col gap-11">
       <div class="flex flex-col gap-[18px]">
@@ -22,16 +29,16 @@ import { Icon } from "astro-icon/components";
           </h1>
           <h2 class="text-xl text-[#515459]">Your super-friendly buddy</h2>
         </div>
-        <p class="text-base text-[#1D1D1C] leading-7 md:max-w-[500px]">
+        <p class="text-base text-[#1D1D1C] leading-7 md:max-w-[480px]">
           I'm a Product Designer with 4+ years of work experience, I specialize
           in product design, strategy and storytelling.
         </p>
       </div>
       <div class="flex flex-wrap gap-5">
         {
-          social.map((e) => (
-            <SocialButton name={e.name} icon={e.icon} url={e.url} />
-          ))
+          newMap.map((e) => {
+            return <SocialButton name={e.name} icon={e.icon} url={e.url} />;
+          })
         }
       </div>
     </div>
@@ -82,7 +89,14 @@ import { Icon } from "astro-icon/components";
         designer, including my ability to blend creativity and technical
         expertise.
       </p>
-      <a class="font-bold text-xl leading-[40px] flex items-center gap-3 group" href="/about">Learn More <Icon name="arrow-right" class='group-hover:translate-x-1.5 duration-300'/> </a>
+      <a
+        class="font-bold text-xl leading-[40px] flex items-center gap-3 group"
+        href="/about"
+        >Learn More <Icon
+          name="arrow-right"
+          class="group-hover:translate-x-1.5 duration-300"
+        />
+      </a>
     </div>
   </Container>
   <!-- Side Project -->
