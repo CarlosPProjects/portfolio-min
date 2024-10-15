@@ -16,5 +16,6 @@ interface IProjects {
   title: string;
   subtitle: string;
   description: string;
+  image: string;
   url: string;
 }
