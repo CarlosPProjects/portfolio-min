@@ -33,3 +33,7 @@ export const nav: INav[] = [
     featured: true,
   },
 ];
+
+export const projects = [{
+  
+}]

@@ -11,3 +11,10 @@ interface INav {
   url: string;
   featured: boolean;
 }
+
+interface IProjects {
+  title: string;
+  subtitle: string;
+  description: string;
+  url: string;
+}
