@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quando&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -17,6 +18,15 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h5 {
   font-family: "Quando", serif;
+}
+h4 {
+  font-family: "Archivo", sans-serif;
+  font-optical-sizing: auto;
+}
+
+h2{
+  font-size: 24px;
 }

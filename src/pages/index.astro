@@ -1,14 +1,17 @@
 ---
 import Container from "@/components/Container.astro";
-import { social } from "@/constants/data";
+import { projects, social } from "@/constants/data";
 import AppLayout from "@/layouts/AppLayout.astro";
 import SocialButton from "@/components/SocialButton.astro";
 import "@/styles/globals.css";
+import ProjectCard from "@/components/ProjectCard.astro";
 ---
 
 <AppLayout title="Carlos Garavito" description="Carlos G. portfolio">
   <!-- Hero Section -->
-  <Container className="flex justify-between flex-col md:flex-row-reverse gap-12 sm:gap-[72px]">
+  <Container
+    className="flex justify-between flex-col md:flex-row-reverse gap-12 sm:gap-[72px]"
+  >
     <div class="flex flex-col gap-11">
       <div class="flex flex-col gap-[18px]">
         <div class="flex flex-col gap-3">
@@ -38,6 +41,22 @@ import "@/styles/globals.css";
         alt="profile picture"
         class="w-full h-full object-cover object-center rounded-2xl"
       />
+    </div>
+  </Container>
+  <Container className="flex flex-col gap-8">
+    <h2 class="">Projects</h2>
+    <div class="flex flex-col gap-6">
+      {
+        projects.map((e) => (
+          <ProjectCard
+            title={e.title}
+            subtitle={e.subtitle}
+            description={e.description}
+            image={e.image}
+            url={e.url}
+          />
+        ))
+      }
     </div>
   </Container>
 </AppLayout>
