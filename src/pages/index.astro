@@ -65,7 +65,7 @@ import { Icon } from "astro-icon/components";
   <!-- Skills -->
   <Container className="flex flex-col gap-10">
     <h2>Skills</h2>
-    <div class="flex flex-col gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
       {
         skills.map((e) => (
           <SkillCard title={e.title} description={e.description} />

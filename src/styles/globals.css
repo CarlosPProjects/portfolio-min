@@ -39,4 +39,7 @@ h2{
     font-family: "Quando", serif;
     font-size: 22px;
   }
+  .__scrollTop{
+    box-shadow: 8px 12px 48px 0 rgba(0,0,0,0.25);
+  }
 }
