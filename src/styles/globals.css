@@ -28,8 +28,10 @@ h4 {
   font-optical-sizing: auto;
 }
 
-h2 {
-  font-size: 24px;
+@layer base {
+  h2 {
+    @apply text-2xl sm:text-[32px]
+  }
 }
 
 @layer components {
