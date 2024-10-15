@@ -8,15 +8,26 @@ import { Icon } from "astro-icon/components";
 
 <header id="header">
   <Container className="max-w-[1328px] !py-4">
-    <div class="flex justify-between items-center ">
+    <div class="flex justify-between items-center">
       <Logo />
       <nav>
         <ul class="hidden sm:flex gap-4">
-          {nav.map(e => (
-            <li  class={cn('font-semibold text-sm', e.featured && 'font-extrabold bg-black text-white rounded-2xl cursor-pointer')}>
-              <a class="p-4 block" href={e.url}>{e.name}</a>
-            </li>
-          ))}
+          {
+            nav.map((e) => (
+              <li
+                class={cn(
+                  "font-semibold text-sm",
+                  e.featured
+                    ? "font-extrabold bg-[#0A0908] text-white rounded-2xl cursor-pointer"
+                    : "relative before:absolute before:inset-0 before:content-[''] before:self-center before:translate-x-4 before:size-1.5 before:bg-[#0A0908] before:rounded-full before:opacity-0 before:transition-all before:duration-300 hover:before:opacity-100 before:hover:translate-x-0"
+                )}
+              >
+                <a class="p-4 block" href={e.url}>
+                  {e.name}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
       <button class="block sm:hidden">

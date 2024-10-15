@@ -15,6 +15,7 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #0a0908;
 }
 
 h1,
@@ -27,19 +28,19 @@ h4 {
   font-optical-sizing: auto;
 }
 
-h2{
+h2 {
   font-size: 24px;
 }
 
 @layer components {
-  .__skill_card{
-    box-shadow: 0 4px 56px 0 rgba(0,0,0,0.08);
+  .__skill_card {
+    box-shadow: 0 4px 56px 0 rgba(0, 0, 0, 0.08);
   }
-  .__skill_title{
+  .__skill_title {
     font-family: "Quando", serif;
     font-size: 22px;
   }
-  .__scrollTop{
-    box-shadow: 8px 12px 48px 0 rgba(0,0,0,0.25);
+  .__scrollTop {
+    box-shadow: 8px 12px 48px 0 rgba(0, 0, 0, 0.25);
   }
 }
