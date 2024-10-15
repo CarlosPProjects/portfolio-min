@@ -24,7 +24,7 @@ export const nav: INav[] = [
   },
   {
     name: "About me",
-    url: "#about",
+    url: "/about",
     featured: false,
   },
   {
