@@ -7,6 +7,7 @@ import ProjectCard from "@/components/ProjectCard.astro";
 import SkillCard from "@/components/SkillCard.astro";
 import "@/styles/globals.css";
 import { Icon } from "astro-icon/components";
+import ContactForm from "@/components/ContactForm.astro";
 
 const cv: ISocial = {
   name: "Resume",
@@ -24,9 +25,7 @@ const newMap = [...social, cv];
     <div class="flex flex-col gap-11">
       <div class="flex flex-col gap-[18px]">
         <div class="flex flex-col gap-3">
-          <h1 class="text-[32px]">
-            Hello, I'm Carlos Garavito 👋🏼
-          </h1>
+          <h1 class="text-[32px]">Hello, I'm Carlos Garavito 👋🏼</h1>
           <h2 class="text-xl text-[#515459]">Your super-friendly buddy</h2>
         </div>
         <p class="text-base text-[#1D1D1C] leading-7 md:max-w-[480px]">
@@ -100,13 +99,24 @@ const newMap = [...social, cv];
     </div>
   </Container>
   <!-- Side Project -->
+  <Container className="flex flex-col gap-10">
+    <h2>Side Project</h2>
+    <ProjectCard
+      title="Adora"
+      subtitle="How Sepps UX Design Increased User Engagement by 25%"
+      description="Boosting Collaboration, Communication, and Overall Event Success"
+      image="/assets/profile.jpg"
+      url=""
+    />
+  </Container>
   <!-- Contact -->
   <Container className="flex flex-col gap-10">
     <div class="flex flex-col gap-4">
       <h2>Enough about me. How can I help you?</h2>
-      <p class="font-medium text-xl">
-        In my spare time, I create resources for free. (used by 1k+ designers)
+      <p class="font-medium text-xl text-[#515459]">
+        Get in touch through this form.
       </p>
     </div>
+    <ContactForm />
   </Container>
 </AppLayout>
