@@ -60,3 +60,26 @@ export const projects: IProjects[] = [
     url: "#",
   },
 ];
+
+export const skills: ISkill[] = [
+  {
+    title: "User Research",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+  },
+  {
+    title: "Product Design",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+  },
+  {
+    title: "Mentorship",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+  },
+  {
+    title: "Design System",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+  },
+];

@@ -1,10 +1,11 @@
 ---
 import Container from "@/components/Container.astro";
-import { projects, social } from "@/constants/data";
+import { projects, skills, social } from "@/constants/data";
 import AppLayout from "@/layouts/AppLayout.astro";
 import SocialButton from "@/components/SocialButton.astro";
-import "@/styles/globals.css";
 import ProjectCard from "@/components/ProjectCard.astro";
+import SkillCard from "@/components/SkillCard.astro";
+import "@/styles/globals.css";
 ---
 
 <AppLayout title="Carlos Garavito" description="Carlos G. portfolio">
@@ -44,7 +45,7 @@ import ProjectCard from "@/components/ProjectCard.astro";
     </div>
   </Container>
   <Container className="flex flex-col gap-8">
-    <h2 class="">Projects</h2>
+    <h2>Projects</h2>
     <div class="flex flex-col gap-6">
       {
         projects.map((e) => (
@@ -55,6 +56,16 @@ import ProjectCard from "@/components/ProjectCard.astro";
             image={e.image}
             url={e.url}
           />
+        ))
+      }
+    </div>
+  </Container>
+  <Container className="flex flex-col gap-10">
+    <h2>Skills</h2>
+    <div class="flex flex-col gap-6">
+      {
+        skills.map((e) => (
+          <SkillCard title={e.title} description={e.description} />
         ))
       }
     </div>

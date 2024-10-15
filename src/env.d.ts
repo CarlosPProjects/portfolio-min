@@ -19,3 +19,8 @@ interface IProjects {
   image: string;
   url: string;
 }
+
+interface ISkill {
+  title: string;
+  description: string;
+}
