@@ -4,6 +4,7 @@ import Container from "./Container.astro";
 import Logo from "./Logo.astro";
 import { nav } from "@/constants/data";
 import { Icon } from "astro-icon/components";
+import Sheet from "./Sheet.astro";
 ---
 
 <header id="header">
@@ -30,9 +31,18 @@ import { Icon } from "astro-icon/components";
           }
         </ul>
       </nav>
-      <button class="block sm:hidden">
+      <button class="block sm:hidden menuButton">
         <Icon name="menu" class="size-6" />
       </button>
+      <script is:inline>
+        import { toggleMenu } from "@/lib/utils";
+
+        const toggleButton = document.querySelector("menuButton");
+        toggleButton?.addEventListener("click", () => {
+          toggleMenu();
+        });
+      </script>
+      <Sheet />
     </div>
   </Container>
 </header>
