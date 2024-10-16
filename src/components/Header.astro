@@ -34,12 +34,13 @@ import Sheet from "./Sheet.astro";
       <button class="block sm:hidden menuButton">
         <Icon name="menu" class="size-6" />
       </button>
-      <script is:inline>
-        import { toggleMenu } from "@/lib/utils";
+      <script>
+        const toggleButton = document.querySelector(".menuButton");
+        const menuContainer = document.querySelector('.__menuContainer')
 
-        const toggleButton = document.querySelector("menuButton");
         toggleButton?.addEventListener("click", () => {
-          toggleMenu();
+          menuContainer?.classList.add("active");
+          console.log("Ready");
         });
       </script>
       <Sheet />
