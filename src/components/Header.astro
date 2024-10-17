@@ -31,18 +31,9 @@ import Sheet from "./Sheet.astro";
           }
         </ul>
       </nav>
-      <button class="block sm:hidden menuButton">
+      <button class="block sm:hidden __toggleButton">
         <Icon name="menu" class="size-6" />
       </button>
-      <script>
-        const toggleButton = document.querySelector(".menuButton");
-        const menuContainer = document.querySelector('.__menuContainer')
-
-        toggleButton?.addEventListener("click", () => {
-          menuContainer?.classList.add("active");
-          console.log("Ready");
-        });
-      </script>
       <Sheet />
     </div>
   </Container>

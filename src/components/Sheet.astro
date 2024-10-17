@@ -2,9 +2,33 @@
 import { nav } from "@/constants/data";
 ---
 
-<div class="absolute bg-black/10 left-0 top-0 right-0 bottom-0 hidden __menuContainer z-10 w-full h-screen">
+<div
+  class="absolute bg-black/10 left-0 top-0 right-0 bottom-0 opacity-0 -z-10 w-full h-screen transition-all duration-500 __menuContainer"
+>
   <div
-    class="w-[320px] min-h-screen absolute top-0 right-0 bg-gray-500 translate-x-full opacity-0 duration-300 z-20"
+    class="w-[320px] min-h-screen absolute top-0 right-0 bg-gray-500 translate-x-full opacity-0 transition-all duration-500 z-20 __sheet"
   >
   </div>
 </div>
+<script>
+  const toggleButton = document.querySelector(".__toggleButton");
+  const menuContainer = document.querySelector(".__menuContainer");
+  const sheet = document.querySelector(".__sheet");
+
+  function toggleMenu() {
+    menuContainer?.classList.toggle("active");
+    sheet?.classList.toggle("active");
+  }
+
+  toggleButton?.addEventListener("click", toggleMenu);
+
+  menuContainer?.addEventListener("click", (event) => {
+    if (event.target === menuContainer) {
+      toggleMenu();
+    }
+  });
+
+  sheet?.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+</script>
