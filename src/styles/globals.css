@@ -35,6 +35,9 @@ h4 {
 }
 
 @layer components {
+  .no-scroll{
+    overflow: hidden;
+  }
   .__skill_card {
     box-shadow: 0 4px 56px 0 rgba(0, 0, 0, 0.08);
   }
@@ -47,6 +50,9 @@ h4 {
   }
   .__menuContainer.active{
     @apply opacity-100 z-10;
+  }
+  .__sheet{
+    box-shadow: -4px 0px 10px 0 rgba(0, 0, 0, 0.25);
   }
   .__sheet.active{
     @apply translate-x-0 opacity-100;
