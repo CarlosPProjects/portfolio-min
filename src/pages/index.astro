@@ -26,11 +26,11 @@ const newMap = [...social, cv];
       <div class="flex flex-col gap-[18px]">
         <div class="flex flex-col gap-3">
           <h1 class="text-[32px]">Hello, I'm Carlos Garavito 👋🏼</h1>
-          <h2 class="text-xl text-[#515459]">Your super-friendly buddy</h2>
+          <h2 class="text-xl text-[#515459]">Glad to see you here!</h2>
         </div>
         <p class="text-base text-[#1D1D1C] leading-7 md:max-w-[480px]">
-          I'm a Product Designer with 4+ years of work experience, I specialize
-          in product design, strategy and storytelling.
+          I am a passionate full stack developer with +4 years of experience in the
+          industry.
         </p>
       </div>
       <div
@@ -38,13 +38,7 @@ const newMap = [...social, cv];
       >
         {
           newMap.map((e) => {
-            return (
-              <SocialButton
-                name={e.name}
-                icon={e.icon}
-                url={e.url}
-              />
-            );
+            return <SocialButton name={e.name} icon={e.icon} url={e.url} />;
           })
         }
       </div>
@@ -53,7 +47,7 @@ const newMap = [...social, cv];
       class="rounded-2xl w-full h-[315px] sm:h-[504px] md:w-[222px] md:h-[274px] min-w-[222px]"
     >
       <img
-        src="/assets/profile.jpg"
+        src="/assets/profile-pic.png"
         alt="profile picture"
         class="w-full h-full object-cover object-center rounded-2xl"
       />
