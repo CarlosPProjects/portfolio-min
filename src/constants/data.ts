@@ -40,7 +40,7 @@ export const projects: IProjects[] = [
     subtitle: "Unboxing the User Experience: A Deep Dive into Archivy Store",
     description:
       "Simplifying Navigation, Enhancing Trust, and Increasing Customer Satisfaction",
-    image: "/assets/profile.jpg",
+    image: "/assets/projects/first-astro-project.webp",
     url: "#",
   },
   {
