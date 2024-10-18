@@ -38,7 +38,13 @@ const newMap = [...social, cv];
       >
         {
           newMap.map((e) => {
-            return <SocialButton name={e.name} icon={e.icon} url={e.url} />;
+            return (
+              <SocialButton
+                name={e.name}
+                icon={e.icon}
+                url={e.url}
+              />
+            );
           })
         }
       </div>
@@ -77,16 +83,16 @@ const newMap = [...social, cv];
     >
       <img src="/assets/quote.png" alt="quote" class="size-10" />
       <p class="text-lg sm:text-2xl leading-8 sm:leading-10">
-        It has been a pleasure to work with Carlos. He is an
-        excellent full stack developer, standing out for his ability to tackle
-        both the client and server sides as well. His attention to detail, commitment to
-        quality and ability to provide effective and creative solutions have
-        been key to the success of numerous projects. In addition, his focus on
-        website optimization, UX/UI design, and SEO expertise have provided
-        significant value to our clients. Carlos has always met every deadline
-        on time and has gone above and beyond to ensure that the final product
-        is of the highest quality. Overall, Carlos' solutions exceeded our
-        expectations and we are delighted with the results.
+        It has been a pleasure to work with Carlos. He is an excellent full
+        stack developer, standing out for his ability to tackle both the client
+        and server sides as well. His attention to detail, commitment to quality
+        and ability to provide effective and creative solutions have been key to
+        the success of numerous projects. In addition, his focus on website
+        optimization, UX/UI design, and SEO expertise have provided significant
+        value to our clients. Carlos has always met every deadline on time and
+        has gone above and beyond to ensure that the final product is of the
+        highest quality. Overall, Carlos' solutions exceeded our expectations
+        and we are delighted with the results.
       </p>
       <div class="flex flex-col gap-2">
         <p class="font-bold text-xl">Roberto E.</p>
