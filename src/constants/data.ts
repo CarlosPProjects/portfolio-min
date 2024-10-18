@@ -63,23 +63,33 @@ export const projects: IProjects[] = [
 
 export const skills: ISkill[] = [
   {
-    title: "User Research",
+    title: "🎨 Front-end Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+      "Experience in creating interactive and modern interfaces using technologies such as Next.js, TypeScript, and TailwindCSS. Skilled in developing optimized websites with frameworks such as Angular, and CMS platforms such as WordPress and Drupal.",
   },
   {
-    title: "Product Design",
+    title: "🖥️ Back-end Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+      "Development of robust server-side applications using Node.js, Express and PHP. Extensive handling of RESTful APIs for efficient integration and communication between systems, ensuring security and scalability in each project.",
   },
   {
-    title: "Mentorship",
+    title: "💾 Databases",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+      "Strong experience in managing relational databases such as MySQL and NoSQL databases such as MongoDB. Ability to design, optimize and maintain data structures that support high performance and availability.",
   },
   {
-    title: "Design System",
+    title: "☁️ DevOps & Infrastructure",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Turpis lobortis varius risus et sed turpis. Dictum eget vitae dolor quam aliquam lectus amet. Enim massa tincidunt leo ",
+      "Proficient in server configuration and maintenance, ensuring availability and performance. Use of Docker for creating consistent development environments, along with AWS for deploying cloud services. Version control and collaboration with GitHub.",
+  },
+  {
+    title: "🤖 Emerging Technologies",
+    description:
+      "Experience using Python to develop artificial intelligence (AI) applications, exploring innovative solutions and applying machine learning to specific projects.",
+  },
+  {
+    title: "🔒 Security and Optimization",
+    description:
+      "Experience in implementing web security measures to protect applications and data, as well as in optimizing the performance of websites and applications to improve their speed and efficiency.",
   },
 ];
