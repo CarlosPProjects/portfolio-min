@@ -36,27 +36,27 @@ export const nav: INav[] = [
 
 export const projects: IProjects[] = [
   {
-    title: "Archivy",
-    subtitle: "Unboxing the User Experience: A Deep Dive into Archivy Store",
+    title: "Prototype with Astro and Tailwind",
+    subtitle: "Simplicity and performance in web development",
     description:
-      "Simplifying Navigation, Enhancing Trust, and Increasing Customer Satisfaction",
+      "A minimalist prototype using Astro and TailwindCSS to create a lightweight, efficient web page. Astro's architecture enables optimized rendering, while Tailwind provides a clean, responsive design with minimal resource load.",
     image: "/assets/projects/first-astro-project.webp",
     url: "#",
   },
   {
-    title: "Leamify",
-    subtitle: "Unveiling the User Journey and Revamping the Learnify UX",
+    title: "Bento Grid Prototype",
+    subtitle: "Minimalist design for modern web portfolio",
     description:
-      "Enhancing Accessibility, Knowledge Retention, and User Motivation",
-    image: "/assets/profile.jpg",
+      "A prototype featuring a minimalist bento grid layout, built with Next.js, TailwindCSS, Shadcn, and TypeScript for a responsive and visually appealing user experience.",
+    image: "/assets/projects/bento-portfolio.webp",
     url: "#",
   },
   {
-    title: "Sepps",
-    subtitle: "How Sepps UX Design Increased User Engagement by 25%",
+    title: "Image Search Application",
+    subtitle: "Dynamic image retrieval and download functionality",
     description:
-      "Boosting Collaboration, Communication, and Overall Event Success",
-    image: "/assets/profile.jpg",
+      "An application built with Next.js, TailwindCSS, and TypeScript that utilizes the Unsplash API to fetch images based on user input. Users can search for images and download their favorites directly from the interface.",
+    image: "/assets/projects/unsplash-gallery.webp",
     url: "#",
   },
 ];
