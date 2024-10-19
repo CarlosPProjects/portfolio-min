@@ -9,8 +9,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({ applyBaseStyles: false }), icon()],
-  output: "server",
+  integrations: [tailwind({ applyBaseStyles: false }), icon(),],
+  // output: "server",
 
   // adapter: node({
   //   mode: "standalone",
