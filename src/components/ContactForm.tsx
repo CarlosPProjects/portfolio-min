@@ -1,39 +1,57 @@
-import { type FC } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-interface Props {}
+const Result = () => {
+  return (
+    <ToastContainer
+      position="top-center"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+      progressStyle={{ backgroundColor: "gray" }}
+    />
+  );
+};
 
-const ContactForm: FC<Props> = ({}) => {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+const ContactForm = () => {
+  const form = useRef<HTMLFormElement>(null);
+  const [result, setResult] = useState(false);
+  const notify = () => toast("Message sent successfully!");
+  // const { EMAIL_JS_PUBLIC_KEY } = import.meta.env;
+
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
-
-    const { name, message } = Object.fromEntries(formData);
-
-    try {
-      const res = await fetch("/api/sendEmail.json", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: 'cgaravito.dev',
-          to: ["cg9822@gmail.com"],
-          subject: "Contact - Portfolio",
-          html: `<p>Name: ${name}</p><p>Message: ${message}</p>`,
-          text: `Name: ${name}\nMessage: ${message}`,
-        }),
-      });
-      const data = await res.json();
-
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+    if (form.current) {
+      await emailjs
+        .sendForm(
+          "service_22mhjda",
+          "template_pwdykt2",
+          form.current,
+          'MkH0sbh-cWU1XdDVQ'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      setResult(true);
     }
   };
 
   return (
-    <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-6" ref={form} onSubmit={sendEmail}>
       <textarea
         aria-label="message"
         placeholder="Write your message here*"
@@ -51,15 +69,15 @@ const ContactForm: FC<Props> = ({}) => {
             aria-label="name"
             placeholder="Name*"
             className="flex-1 px-6 py-4 rounded-xl border border-[#8F98A6]"
-            name="name"
+            name="user_name"
             required
           />
           <input
-            type="email"
             aria-label="email"
             placeholder="Email*"
             className="flex-1 px-6 py-4 rounded-xl border border-[#8F98A6]"
-            name="email"
+            type="email"
+            name="user_email"
             required
           />
         </div>
@@ -67,9 +85,11 @@ const ContactForm: FC<Props> = ({}) => {
       <button
         type="submit"
         className="w-full p-4 rounded-2xl bg-[#0A0908] text-white font-bold text-sm mt-10"
+        onClick={notify}
       >
         Send Message
       </button>
+      <div>{result ? <Result /> : null}</div>
     </form>
   );
 };
