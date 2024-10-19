@@ -3,6 +3,10 @@ import { Resend } from "resend";
 
 const { RESEND_API_KEY } = import.meta.env;
 
+if (!RESEND_API_KEY) {
+  throw new Error("RESEND_API_KEY is not defined");
+}
+
 const resend = new Resend(RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ request }) => {
