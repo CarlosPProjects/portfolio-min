@@ -6,11 +6,6 @@ import emailjs from "@emailjs/browser";
 const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const {
-    PUBLIC_EMAIL_JS_PUBLIC_KEY,
-    PUBLIC_EMAIL_JS_SERVICE,
-    PUBLIC_EMAIL_JS_TEMPLATE,
-  } = import.meta.env;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,10 +15,10 @@ const ContactForm = () => {
       if (form.current) {
         await emailjs
           .sendForm(
-            PUBLIC_EMAIL_JS_SERVICE,
-            PUBLIC_EMAIL_JS_TEMPLATE,
+            'service_22mhjda',
+            'template_pwdykt2',
             form.current,
-            PUBLIC_EMAIL_JS_PUBLIC_KEY
+            'MkH0sbh-cWU1XdDVQ'
           )
           .then(
             (result) => {
