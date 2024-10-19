@@ -6,19 +6,37 @@ const { RESEND_API_KEY } = import.meta.env;
 const resend = new Resend(RESEND_API_KEY);
 
 export const POST: APIRoute = async ({ params, request }) => {
-  const { name, from, message } = await request.json();
+  const body = await request.json();
+  const { from, to, subject, html, text } = body;
 
-  const { data, error } = await resend.emails.send({
+  if (!to || !from || !subject || !html || !text) {
+    return new Response(null, {
+      status: 400,
+      statusText: "Did not provide the right data",
+    });
+  }
+
+  const send = await resend.emails.send({
     from,
-    to: ["cg9822@gmail.com"],
-    subject: "Contact - Portfolio",
-    html: `<p>Name: ${name}</p><p>Message: ${message}</p>`,
+    to,
+    subject,
+    html,
+    text,
   });
 
-  return new Response(
-    JSON.stringify({
-      name: "Astro",
-      url: "https://astro.build/",
-    })
-  );
+  if (send.data) {
+    return new Response(
+      JSON.stringify({
+        message: send.data,
+      }),
+      { status: 200, statusText: "OK" }
+    );
+  } else {
+    return new Response(
+      JSON.stringify({
+        message: send.error,
+      }),
+      { status: 400, statusText: "Bad Request" }
+    );
+  }
 };
