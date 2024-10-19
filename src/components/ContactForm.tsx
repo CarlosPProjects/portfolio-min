@@ -8,7 +8,7 @@ const ContactForm: FC<Props> = ({}) => {
 
     const formData = new FormData(e.currentTarget);
 
-    const { name, from, message } = Object.fromEntries(formData);
+    const { name, email, message } = Object.fromEntries(formData);
 
     try {
       const res = await fetch("/api/sendEmail.json", {
@@ -17,7 +17,7 @@ const ContactForm: FC<Props> = ({}) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from,
+          from: email,
           to: ["cg9822@gmail.com"],
           subject: "Contact - Portfolio",
           html: `<p>Name: ${name}</p><p>Message: ${message}</p>`,
