@@ -31,12 +31,15 @@ const { title, subtitle, description, image, url } = Astro.props;
 </div>
 
 <script>
-  const projectContainer = document.querySelector(".__projectContainer");
+  const projectContainer = document.querySelectorAll(".__projectContainer");
 
-  projectContainer?.addEventListener("click", () => {
-    const url = projectContainer.getAttribute("data-url");
-    if (url) {
-      window.open(url, "_blank");
-    }
+  projectContainer.forEach((project) => {
+    project?.addEventListener("click", () => {
+      const url = project.getAttribute("data-url");
+      if (url) {
+        console.log(url);
+        window.open(url, "_blank");
+      }
+    });
   });
 </script>

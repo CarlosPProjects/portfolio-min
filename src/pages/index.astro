@@ -7,7 +7,7 @@ import ProjectCard from "@/components/ProjectCard.astro";
 import SkillCard from "@/components/SkillCard.astro";
 import "@/styles/globals.css";
 import { Icon } from "astro-icon/components";
-import ContactForm from "@/components/ContactForm.astro";
+import ContactForm from "@/components/email/ContactForm";
 
 const cv: ISocial = {
   name: "Resume",
@@ -143,6 +143,6 @@ const newMap = [...social, cv];
         Get in touch through this form.
       </p>
     </div>
-    <ContactForm />
+    <ContactForm client:load />
   </Container>
 </AppLayout>
