@@ -1,0 +1,36 @@
+---
+import Container from "@/components/Container.astro";
+import { tech } from "@/constants/data";
+import AppLayout from "@/layouts/AppLayout.astro";
+import "@/styles/globals.css";
+---
+
+<!-- About Me -->
+<AppLayout title="About Me" description="About Me">
+  <Container className="flex flex-col gap-10">
+    <div id="about"></div>
+    <h2>About Me</h2>
+    <div class="flex flex-col">
+      <p class="text-2xl leading-10">
+        I am Carlos Garavito, a passionate FullStack developer with over 4 years
+        of experience in the software industry. I specialize in web application
+        development, database management, performance optimization, and
+        cybersecurity. My skill set includes modern technologies like
+        TypeScript, Next.js, Node.js, PHP, and Java, as well as CMS platforms
+        such as Drupal 9 and WordPress. I am also proficient in e-commerce
+        development with Shopify and PrestaShop, and have a growing interest in
+        artificial intelligence using Python. I am always seeking new challenges
+        and learning opportunities. Outside of work, I enjoy staying active,
+        leading a healthy lifestyle, and traveling to explore different
+        cultures. If you're looking for a creative and experienced developer to
+        elevate your projects, feel free to reach out. Let's build something
+        amazing together!
+      </p>
+      <div class="flex items-center justify-center flex-wrap gap-6 my-20">
+        {tech.map(e => (
+          <a href={e.url} target="_blank"><img src={e.img} alt={e.alt} class="size-12 object-contain"></a>
+        ))}
+      </div>
+    </div>
+  </Container>
+</AppLayout>

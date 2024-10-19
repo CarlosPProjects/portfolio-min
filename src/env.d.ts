@@ -18,9 +18,17 @@ interface IProject {
   description: string;
   image: string;
   url: string;
+  completed?: boolean;
 }
 
 interface ISkill {
   title: string;
   description: string;
+}
+
+interface ITech {
+  name: string;
+  url: string;
+  img: string;
+  alt: string;
 }
