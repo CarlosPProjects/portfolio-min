@@ -1,4 +1,4 @@
-import { type EventHandler, type FC } from "react";
+import { type FC } from "react";
 
 interface Props {}
 
@@ -8,7 +8,7 @@ const ContactForm: FC<Props> = ({}) => {
 
     const formData = new FormData(e.currentTarget);
 
-    const { name, email, message } = Object.fromEntries(formData);
+    const { name, message } = Object.fromEntries(formData);
 
     try {
       const res = await fetch("/api/sendEmail.json", {

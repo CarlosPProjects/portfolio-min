@@ -10,7 +10,6 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind({ applyBaseStyles: false }), icon(), react()],
-  devToolbar: { enabled: false },
   output: "server",
 
   adapter: node({
