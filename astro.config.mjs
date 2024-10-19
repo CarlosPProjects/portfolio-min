@@ -3,16 +3,16 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 
-// import node from "@astrojs/node";
+import node from "@astrojs/node";
 
-// import react from "@astrojs/react";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({ applyBaseStyles: false }), icon(),],
-  // output: "server",
+  integrations: [tailwind({ applyBaseStyles: false }), icon(), react()],
+  output: "server",
 
-  // adapter: node({
-  //   mode: "standalone",
-  // }),
+  adapter: node({
+    mode: "standalone",
+  }),
 });
