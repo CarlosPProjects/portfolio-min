@@ -11,7 +11,7 @@
 //     const { name, message } = Object.fromEntries(formData);
 
 //     try {
-//       const res = await fetch("/sendEmail.json", {
+//       const res = await fetch("/api/sendEmail.json", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
