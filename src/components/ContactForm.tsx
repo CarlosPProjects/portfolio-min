@@ -17,7 +17,7 @@ const ContactForm: FC<Props> = ({}) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: ['cgaravito.vercel.app'],
+          from: 'cgaravito.dev',
           to: ["cg9822@gmail.com"],
           subject: "Contact - Portfolio",
           html: `<p>Name: ${name}</p><p>Message: ${message}</p>`,
