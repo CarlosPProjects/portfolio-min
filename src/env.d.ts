@@ -12,7 +12,7 @@ interface INav {
   featured: boolean;
 }
 
-interface IProjects {
+interface IProject {
   title: string;
   subtitle: string;
   description: string;

@@ -10,12 +10,15 @@ interface Props {
 const { title, subtitle, description, image, url } = Astro.props;
 ---
 
-<div class="p-4 rounded-2xl flex flex-col gap-12 border border-[#8F98A6] group">
+<div
+  class="p-4 rounded-2xl flex flex-col gap-12 border border-[#8F98A6] cursor-pointer transition-all duration-300 hover:shadow-lg __projectContainer"
+  data-url={url}
+>
   <div class="w-full h-full rounded-2xl">
     <img
       src={image}
       alt={title}
-      class="object-cover object-top w-full h-[236px] sm:h-full rounded-[14px] min-w-[236px] max-h-[445px] transition-all duration-[3000ms] sm:group-hover:object-bottom"
+      class="object-cover object-top w-full h-[236px] sm:h-full rounded-[14px] min-w-[236px] max-h-[445px]"
     />
   </div>
   <div class="flex flex-col gap-6">
@@ -26,3 +29,14 @@ const { title, subtitle, description, image, url } = Astro.props;
     </div>
   </div>
 </div>
+
+<script>
+  const projectContainer = document.querySelector(".__projectContainer");
+
+  projectContainer?.addEventListener("click", () => {
+    const url = projectContainer.getAttribute("data-url");
+    if (url) {
+      window.open(url, "_blank");
+    }
+  });
+</script>

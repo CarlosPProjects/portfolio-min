@@ -34,14 +34,14 @@ export const nav: INav[] = [
   },
 ];
 
-export const projects: IProjects[] = [
+export const projects: IProject[] = [
   {
     title: "Prototype with Astro and Tailwind",
     subtitle: "Simplicity and performance in web development",
     description:
       "A minimalist prototype using Astro and TailwindCSS to create a lightweight, efficient web page. Astro's architecture enables optimized rendering, while Tailwind provides a clean, responsive design with minimal resource load.",
     image: "/assets/projects/first-astro-project.webp",
-    url: "#",
+    url: "https://astro-fp.vercel.app/",
   },
   {
     title: "Bento Grid Prototype",
