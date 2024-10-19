@@ -42,6 +42,7 @@ export const projects: IProject[] = [
       "A minimalist prototype using Astro and TailwindCSS to create a lightweight, efficient web page. Astro's architecture enables optimized rendering, while Tailwind provides a clean, responsive design with minimal resource load.",
     image: "/assets/projects/first-astro-project.webp",
     url: "https://astro-fp.vercel.app/",
+    completed: true
   },
   {
     title: "Bento Grid Prototype",
@@ -50,6 +51,7 @@ export const projects: IProject[] = [
       "A prototype featuring a minimalist bento grid layout, built with Next.js, TailwindCSS, Shadcn, and TypeScript for a responsive and visually appealing user experience.",
     image: "/assets/projects/bento-portfolio.webp",
     url: "https://portfolio-v3-dusky.vercel.app/",
+    completed: true
   },
   {
     title: "Image Search Application",
@@ -58,6 +60,7 @@ export const projects: IProject[] = [
       "An application built with Next.js, TailwindCSS, and TypeScript that utilizes the Unsplash API to fetch images based on user input. Users can search for images and download their favorites directly from the interface.",
     image: "/assets/projects/unsplash-gallery.webp",
     url: "https://unsplash-v2.vercel.app/",
+    completed: true
   },
 ];
 

@@ -18,7 +18,7 @@ interface IProject {
   description: string;
   image: string;
   url: string;
-  completed?: boolean;
+  completed: boolean;
 }
 
 interface ISkill {
