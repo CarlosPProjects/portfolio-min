@@ -49,7 +49,7 @@ export const projects: IProject[] = [
     description:
       "A prototype featuring a minimalist bento grid layout, built with Next.js, TailwindCSS, Shadcn, and TypeScript for a responsive and visually appealing user experience.",
     image: "/assets/projects/bento-portfolio.webp",
-    url: "#",
+    url: "https://portfolio-v3-dusky.vercel.app/",
   },
   {
     title: "Image Search Application",
@@ -57,7 +57,7 @@ export const projects: IProject[] = [
     description:
       "An application built with Next.js, TailwindCSS, and TypeScript that utilizes the Unsplash API to fetch images based on user input. Users can search for images and download their favorites directly from the interface.",
     image: "/assets/projects/unsplash-gallery.webp",
-    url: "#",
+    url: "https://unsplash-v2.vercel.app/",
   },
 ];
 
