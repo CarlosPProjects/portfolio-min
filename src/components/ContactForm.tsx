@@ -1,57 +1,51 @@
 import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const Result = () => {
-  return (
-    <ToastContainer
-      position="top-center"
-      autoClose={3000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="dark"
-      progressStyle={{ backgroundColor: "gray" }}
-    />
-  );
-};
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
-  const [result, setResult] = useState(false);
-  const notify = () => toast("Message sent successfully!");
-  // const { EMAIL_JS_PUBLIC_KEY } = import.meta.env;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const {
+    PUBLIC_EMAIL_JS_PUBLIC_KEY,
+    PUBLIC_EMAIL_JS_SERVICE,
+    PUBLIC_EMAIL_JS_TEMPLATE,
+  } = import.meta.env;
 
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    if (form.current) {
-      await emailjs
-        .sendForm(
-          "service_22mhjda",
-          "template_pwdykt2",
-          form.current,
-          'MkH0sbh-cWU1XdDVQ'
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-      setResult(true);
+    try {
+      if (form.current) {
+        await emailjs
+          .sendForm(
+            PUBLIC_EMAIL_JS_SERVICE,
+            PUBLIC_EMAIL_JS_TEMPLATE,
+            form.current,
+            PUBLIC_EMAIL_JS_PUBLIC_KEY
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
+        toast.success("Message sent successfully!");
+        form.current?.reset();
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <form className="flex flex-col gap-6" ref={form} onSubmit={sendEmail}>
+    <form className="flex flex-col gap-6" ref={form} onSubmit={handleSubmit}>
       <textarea
         aria-label="message"
         placeholder="Write your message here*"
@@ -69,7 +63,7 @@ const ContactForm = () => {
             aria-label="name"
             placeholder="Name*"
             className="flex-1 px-6 py-4 rounded-xl border border-[#8F98A6]"
-            name="user_name"
+            name="name"
             required
           />
           <input
@@ -77,7 +71,7 @@ const ContactForm = () => {
             placeholder="Email*"
             className="flex-1 px-6 py-4 rounded-xl border border-[#8F98A6]"
             type="email"
-            name="user_email"
+            name="email"
             required
           />
         </div>
@@ -85,11 +79,23 @@ const ContactForm = () => {
       <button
         type="submit"
         className="w-full p-4 rounded-2xl bg-[#0A0908] text-white font-bold text-sm mt-10"
-        onClick={notify}
+        disabled={isSubmitting}
       >
-        Send Message
+        {isSubmitting ? "Sending..." : "Send Message"}
       </button>
-      <div>{result ? <Result /> : null}</div>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        progressStyle={{ backgroundColor: "gray" }}
+      />
     </form>
   );
 };
