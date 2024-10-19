@@ -5,7 +5,7 @@ const { RESEND_API_KEY } = import.meta.env;
 
 const resend = new Resend(RESEND_API_KEY);
 
-export const POST: APIRoute = async ({ params, request }) => {
+export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
   const { from, to, subject, html, text } = body;
 
