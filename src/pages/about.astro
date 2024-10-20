@@ -1,6 +1,6 @@
 ---
 import Container from "@/components/Container.astro";
-import { tech } from "@/constants/data";
+import { tech } from "@/db/data";
 import AppLayout from "@/layouts/AppLayout.astro";
 import "@/styles/globals.css";
 ---
@@ -27,9 +27,13 @@ import "@/styles/globals.css";
         amazing together!
       </p>
       <div class="flex items-center justify-center flex-wrap gap-6 my-20">
-        {tech.map(e => (
-          <a href={e.url} target="_blank"><img src={e.img} alt={e.alt} class="size-12 object-contain"></a>
-        ))}
+        {
+          tech.map((e) => (
+            <a href={e.url} target="_blank">
+              <img src={e.img} alt={e.alt} class="size-12 object-contain" />
+            </a>
+          ))
+        }
       </div>
     </div>
   </Container>

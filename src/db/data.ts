@@ -36,13 +36,22 @@ export const nav: INav[] = [
 
 export const projects: IProject[] = [
   {
+    title: "Multilingual Chat Application",
+    subtitle: "Real-time messaging with language translation and subscription features",
+    description:
+      "A web app using Next.js, TailwindCSS, Firebase, and Stripe, where users can join chat groups and communicate in multiple languages. Firebase allows real-time message translation, and Stripe manages user subscriptions.",
+    image: "/assets/projects/translator-chat.webp",
+    url: "https://saas-translation-app-eight.vercel.app/",
+    completed: true,
+  },
+  {
     title: "Prototype with Astro and Tailwind",
     subtitle: "Simplicity and performance in web development",
     description:
       "A minimalist prototype using Astro and TailwindCSS to create a lightweight, efficient web page. Astro's architecture enables optimized rendering, while Tailwind provides a clean, responsive design with minimal resource load.",
     image: "/assets/projects/first-astro-project.webp",
     url: "https://astro-fp.vercel.app/",
-    completed: true
+    completed: true,
   },
   {
     title: "Bento Grid Prototype",
@@ -51,7 +60,7 @@ export const projects: IProject[] = [
       "A prototype featuring a minimalist bento grid layout, built with Next.js, TailwindCSS, Shadcn, and TypeScript for a responsive and visually appealing user experience.",
     image: "/assets/projects/bento-portfolio.webp",
     url: "https://portfolio-v3-dusky.vercel.app/",
-    completed: true
+    completed: true,
   },
   {
     title: "Image Search Application",
@@ -60,7 +69,7 @@ export const projects: IProject[] = [
       "An application built with Next.js, TailwindCSS, and TypeScript that utilizes the Unsplash API to fetch images based on user input. Users can search for images and download their favorites directly from the interface.",
     image: "/assets/projects/unsplash-gallery.webp",
     url: "https://unsplash-v2.vercel.app/",
-    completed: true
+    completed: true,
   },
 ];
 

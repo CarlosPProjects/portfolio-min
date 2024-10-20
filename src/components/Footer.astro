@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Container from "./Container.astro";
-import { social } from "@/constants/data";
+import { social } from "@/db/data";
 import SocialButton from "./SocialButton.astro";
 ---
 
@@ -23,7 +23,10 @@ import SocialButton from "./SocialButton.astro";
       href="#header"
       class="grid p-3 sm:p-6 place-content-center rounded-2xl bg-black group __scrollTop"
     >
-      <Icon name="arrow-up" class="size-6 sm:size-12 group-hover:-translate-y-1 duration-300" />
+      <Icon
+        name="arrow-up"
+        class="size-6 sm:size-12 group-hover:-translate-y-1 duration-300"
+      />
     </a>
   </Container>
 </footer>
