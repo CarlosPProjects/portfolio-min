@@ -1,10 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
-  const form = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -12,35 +10,38 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      if (form.current) {
-        await emailjs
-          .sendForm(
-            'service_22mhjda',
-            'template_pwdykt2',
-            form.current,
-            'MkH0sbh-cWU1XdDVQ'
-          )
-          .then(
-            (result) => {
-              console.log(result.text);
-            },
-            (error) => {
-              console.log(error.text);
-            }
-          );
-        toast.success("Message sent successfully!");
-        form.current?.reset();
+      const formData = new FormData(e.currentTarget);
+      const data = {
+        name: formData.get("name") as string,
+        email: formData.get("email") as string,
+        message: formData.get("message") as string,
+      };
+
+      const res = await fetch("/api/sendEmail.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        toast.success("Email sent successfully!");
+      } else {
+        throw new Error(
+          `Server responded with ${res.status}: ${res.statusText}`
+        );
       }
     } catch (error) {
       console.error(error);
-      toast.error("An error occurred. Please try again.");
+      toast.error("An error has occurred, try again later");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form className="flex flex-col gap-6" ref={form} onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
       <textarea
         aria-label="message"
         placeholder="Write your message here*"
