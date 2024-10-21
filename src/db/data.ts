@@ -29,7 +29,7 @@ export const nav: INav[] = [
   },
   {
     name: "Contact me",
-    url: "#contact",
+    url: "/#contact",
     featured: true,
   },
 ];
